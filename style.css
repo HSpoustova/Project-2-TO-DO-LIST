@@ -1,0 +1,109 @@
+/* Reset & základy */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #827be0;
+  background: linear-gradient(90deg, rgba(130, 123, 224, 1) 0%, rgba(182, 87, 199, 1) 50%, rgba(250, 252, 76, 1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.board {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.9px);
+  -webkit-backdrop-filter: blur(8.9px);
+  border: 1px solid rgba(255, 255, 255, 0.57);
+  padding: 24px;
+  width: 360px;
+
+}
+
+.board_header h2 {
+  color: #e0e0e0;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Seznam úkolů */
+.task_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  min-height: 40px;
+}
+
+
+.task_list li {
+  background-color: #0f3460;
+  color: #e0e0e0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: grab;
+}
+
+/* Přeškrtnutý (hotový) úkol */
+.task_list li.done span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* Tlačítko smazat */
+.button_delete {
+  background: none;
+  border: none;
+  color: #e07070;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 4px;
+  margin-left: 8px;
+}
+
+.task_add {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.task_add input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0a2540;
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+
+.task_add input::placeholder {
+  color: #fffefe;
+}
+
+.task_add button {
+  background-color: #e087c5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.task_add button:hover {
+  background-color: #d36fb0;
+}
