@@ -7,8 +7,7 @@
 
 body {
   min-height: 100vh;
-  background: #827be0;
-  background: linear-gradient(90deg, rgba(130, 123, 224, 1) 0%, rgba(182, 87, 199, 1) 50%, rgba(250, 252, 76, 1) 100%);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +15,8 @@ body {
 }
 
 .board {
-  background: rgba(255, 255, 255, 0.08);
+  background: #827be0;
+  background: linear-gradient(90deg, rgba(130, 123, 224, 1) 0%, rgba(182, 87, 199, 1) 50%, rgba(250, 252, 76, 1) 100%);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.9px);
@@ -46,7 +46,7 @@ body {
 
 
 .task_list li {
-  background-color: #0f3460;
+  background-color: #330b3f;
   color: #e0e0e0;
   padding: 10px 14px;
   border-radius: 8px;
@@ -54,6 +54,10 @@ body {
   align-items: center;
   justify-content: space-between;
   cursor: grab;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  word-break: break-word;
 }
 
 
@@ -61,6 +65,9 @@ body {
   color: #e0e0e0;
   text-decoration: line-through;
   opacity: 0.5;
+  display: flex;
+  flex: 1;
+  min-width: 0;
 }
 
 .button_delete {
