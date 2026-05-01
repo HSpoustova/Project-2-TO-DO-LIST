@@ -35,7 +35,6 @@ body {
   text-transform: uppercase;
 }
 
-/* Seznam úkolů */
 .task_list {
   list-style: none;
   display: flex;
@@ -57,13 +56,13 @@ body {
   cursor: grab;
 }
 
-/* Přeškrtnutý (hotový) úkol */
+
 .task_list li.done span {
+  color: #e0e0e0;
   text-decoration: line-through;
   opacity: 0.5;
 }
 
-/* Tlačítko smazat */
 .button_delete {
   background: none;
   border: none;
