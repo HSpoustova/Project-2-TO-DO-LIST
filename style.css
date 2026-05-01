@@ -15,8 +15,8 @@ body {
 }
 
 .board {
-  background: #020024;
-  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(46, 46, 171, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  background: #252370;
+  background: linear-gradient(90deg, rgba(37, 35, 112, 1) 0%, rgba(46, 88, 171, 1) 44%, rgba(0, 212, 255, 1) 100%);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.9px);
