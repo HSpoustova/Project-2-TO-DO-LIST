@@ -4,6 +4,38 @@ const addButton = document.getElementById('button_add');
 const deleteButton = document.querySelector('.button_delete');
 
 let tasks = [];
+let dragIndex = null;
+
+let addDragEvents = () => {
+  const items = taskList.querySelectorAll('li');
+
+  items.forEach((li) => {
+    li.addEventListener('dragstart', () => {
+      dragIndex = Number(li.dataset.index);
+      li.classList.add('dragging');
+    });
+
+    li.addEventListener('dragend', () => {
+      li.classList.remove('dragging');
+    });
+
+    li.addEventListener('dragover', (event) => {
+      event.preventDefault();
+    });
+
+    li.addEventListener('drop', () => {
+      const dropIndex = Number(li.dataset.index);
+
+      if (dragIndex === dropIndex) return;
+
+      const move = tasks.splice(dragIndex, 1)[0];
+      tasks.splice(dropIndex, 0, move);
+
+      saveTasks();
+      renderTasks();
+    });
+  });
+};
 
 const addTask = () => {
   const text = taskInput.value.trim();
@@ -48,6 +80,7 @@ const renderTasks = () => {
   taskList.innerHTML = '';
   tasks.forEach((task, index) => {
     const li = document.createElement('li');
+    li.draggable = true;
     if (task.done) li.classList.add('done');
 
     li.innerHTML = `<span> ${task.text} </span>
@@ -56,6 +89,8 @@ const renderTasks = () => {
     li.dataset.index = index;
     taskList.appendChild(li);
   });
+
+  addDragEvents();
 };
 
 const saveTask = addButton.addEventListener('click', addTask);

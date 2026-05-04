@@ -71,6 +71,11 @@ body {
   min-width: 0;
 }
 
+.task_list li.dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
 .button_delete {
   background: none;
   border: none;
